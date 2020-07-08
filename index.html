@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Touchless Elevator</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <style>
+        #titleInfo{
+            margin-left: 3%;
+        }
+
+        #buttons{
+            margin-left: 3%;
+            margin-top: 3%;
+        }
+
+        #screen-pos{
+            margin-top: 10%;
+            margin-left: 3%;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="titleInfo">
+        <h2>Touchless Elevator Concept</h2>
+        <p>Proof of concept version 1.0.0</p>
+    </div>
+
+    <div id="screen-pos">
+        <p><b>Enter screen position for the AR stereo window.</b></p>
+        <input id="x-pos" type="text" placeholder="y:">
+        <input id="y-pos" type="text" placeholder="x:">
+    </div>
+
+    <div id="buttons">
+        <button id="launch">Launch</button>
+    </div>
+
+    <script src="renderManager.js"></script>
+  </body>
+</html>
