@@ -14,7 +14,7 @@ function createWindow () {
   win.loadFile('index.html')
 
   // Open the DevTools.
-//   win.webContents.openDevTools()
+  win.webContents.openDevTools({mode: "detach"})
 }
 
 // This method will be called when Electron has finished
