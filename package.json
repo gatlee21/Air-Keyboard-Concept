@@ -18,5 +18,8 @@
   "homepage": "https://github.com/atlee19/Touchless-Elevator-Concept#readme",
   "devDependencies": {
     "electron": "^9.1.0"
+  },
+  "dependencies": {
+    "three": "^0.118.3"
   }
 }

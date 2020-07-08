@@ -23,6 +23,8 @@ function createARwindow() {
 
       ARwindow.loadFile("ARview.html")
 
+      ARwindow.webContents.openDevTools({ mode: "detach" })
+
       ARwindow.on("closed", () => {
         ARwindow = null
       })

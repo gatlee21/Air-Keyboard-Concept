@@ -1,11 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>AR VIEW</h1>
-</body>
-</html>
+<!-- 
+    Author: Graham Atlee
+
+    Html file that sets up the three.js canvas. I would not
+    recommend modifying any of the css code. 
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+     <style>
+ 
+         body { margin: 0; }
+         #c { 
+                 width: 100vw; 
+                 height: 100vh; 
+                 display: block; 
+                 transform: scaleX(-1); /*mirror image swap. DON'T REMOVE*/
+             }
+ 
+         #ui { position: absolute; left: 1em; top: 1em; }
+         
+     </style>
+    
+     <title>Triton</title>
+ </head>
+ <body>
+ 
+     <canvas id="c"></canvas>
+     
+     <!-- Here we call three.js module before tritonScene -->
+     <script>var THREE = require('three')</script>
+     <script type="module" src="ARviewControl.js"></script>
+ </body>
+ </html>
