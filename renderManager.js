@@ -7,12 +7,12 @@ let ARwindow
 let ElevatorWindow
 
 //window creation functions 
-function createARwindow() {
+function createARwindow(x,y) {
     ARwindow = new BrowserWindow({
         width: 800,
         height: 600,
-        x: 0,
-        y: 0,
+        x: x,
+        y: y,
         frame: false,
         fullscreen: false,
         autoHideMenuBar: true,
@@ -62,7 +62,9 @@ function createElevatorWindow() {
 //button management 
 let launchBtn = document.getElementById("launch")
 launchBtn.addEventListener("click", function launch() {
-    createARwindow()
+    let x = document.getElementById("x-pos").value
+    let y = document.getElementById("y-pos").value
+    createARwindow(parseInt(x),parseInt(y))
     // createElevatorWindow()
 })
 
