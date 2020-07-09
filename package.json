@@ -20,6 +20,8 @@
     "electron": "^9.1.0"
   },
   "dependencies": {
-    "three": "^0.118.3"
+    "@tweenjs/tween.js": "^18.6.0",
+    "three": "^0.118.3",
+    "three-spritetext": "^1.5.1"
   }
 }

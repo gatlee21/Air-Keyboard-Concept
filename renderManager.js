@@ -38,7 +38,7 @@ function createElevatorWindow() {
         height: 800,
         x: 100,
         y: 0,
-        frame: false,
+        frame: true,
         fullscreen: false,
         autoHideMenuBar: true,
         webPreferences: {
@@ -47,6 +47,8 @@ function createElevatorWindow() {
       })
 
       ElevatorWindow.loadFile("elevatorView.html")
+
+      // ElevatorWindow.webContents.openDevTools({ mode: "detach" })
 
       ElevatorWindow.on("closed", () => {
         ElevatorWindow = null
@@ -61,7 +63,7 @@ function createElevatorWindow() {
 let launchBtn = document.getElementById("launch")
 launchBtn.addEventListener("click", function launch() {
     createARwindow()
-    createElevatorWindow()
+    // createElevatorWindow()
 })
 
 let endDemoBtn = document.getElementById("endDemo")
