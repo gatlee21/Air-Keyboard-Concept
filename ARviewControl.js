@@ -153,7 +153,7 @@ function main() {
     label_K.position.set(0,0,1)
 
     const A = keyboard.children[17]
-    const label_A = new SpriteText('D');
+    const label_A = new SpriteText('A');
     label_A.textHeight=FONT_SIZE
     three.scene.add(label_A)
     A.add(label_A)
@@ -271,6 +271,7 @@ function main() {
     Space.add(label_Space)
     label_Space.position.set(0,0,1.2)
 
+    const MIN_THRES = 0.018
 
     leap.loopController.on('frame', function leapFrame(frame){
         
@@ -301,147 +302,175 @@ function main() {
                 const indexFingerPos = hand.pointables[1].tipPosition
                 cursor.position.copy(toVector3(indexFingerPos))
 
-                if(Q.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                if(Q.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Q.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', Q.name)
                 }
-                else if(D.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(D.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   D.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', D.name)
                 }
-                else if(O.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(O.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   O.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', O.name)
                 }
-                else if(E.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(E.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   E.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', E.name)
                 }
-                else if(H.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(H.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   H.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', H.name)
                 }
-                else if(Y.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Y.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Y.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
                   textWindow.webContents.send('message', Y.name)
                 }
-                else if(U.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(U.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   U.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', U.name)
                 }
-                else if(N.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(N.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   N.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', N.name)
                 }
-                else if(I.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(I.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   I.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', I.name)
                 }
-                else if(T.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(T.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   T.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', T.name)
                 }
-                else if(V.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(V.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   V.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', V.name)
                 }
-                else if(W.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(W.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   W.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', W.name)
                 }
-                else if(F.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(F.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   F.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', F.name)
                 }
-                else if(S.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(S.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   S.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', S.name)
                 }
-                else if(R.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(R.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   R.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', R.name)
                 }
-                else if(B.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(B.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   B.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', B.name)
                 }
-                else if(K.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(K.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   K.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', K.name)
                 }
-                else if(A.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(A.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   A.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', A.name)
                 }
-                else if(L.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(L.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   L.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', L.name)
                 }
-                else if(J.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(J.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   J.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', J.name)
                 }
-                else if(X.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(X.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   X.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', X.name)
                 }
-                else if(C.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(C.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   C.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', C.name)
                 }
-                else if(M.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(M.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   M.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', M.name)
                 }
-                else if(P.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(P.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   P.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', P.name)
                 }
-                else if(question.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(question.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   question.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', question.name)
                 }
-                else if(Z.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Z.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Z.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Z.name)
                 }
-                else if(period.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(period.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   period.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', period.name)
                 }
-                else if(at.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(at.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   at.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', at.name)
                 }
-                else if(G.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(G.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   G.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', G.name)
                 }
-                else if(Tab.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Tab.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Tab.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Tab.name)
                 }
-                else if(Del.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Del.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Del.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Del.name)
                 }
-                else if(Back.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Back.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Back.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Back.name)
                 }
-                else if(Enter.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Enter.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Enter.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Enter.name)
                 }
-                else if(Space.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
+                else if(Space.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < MIN_THRES){
                   Space.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Space.name)
                 }
                 else{
                   cursor.material.color.setHex(YELLOW)
