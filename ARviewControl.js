@@ -285,13 +285,13 @@ function main() {
                 const t = new TWEEN.Tween(keyboard.scale)
                 .to({x:0, y:0, z:0}, 5)
                 t.start();
-                keyboard.position.copy(toVector3(palmPos));
+                // keyboard.position.copy(toVector3(palmPos));
               }
               else if(palmNorm[2] > 0 && hand.type == "left"){
                 keyboard.position.copy(toVector3(palmPos, 0.1, 0, 0.03));
                 // tween animation enlarge
                 const g = new TWEEN.Tween(keyboard.scale)
-                .to({x: 0.01, y: 0.01, z: 0.01}, 200).easing(TWEEN.Easing.Elastic.Out)
+                .to({x: 0.01, y: 0.01, z: 0.01}, 600).easing(TWEEN.Easing.Elastic.Out)
                 g.start();
               }
 
@@ -508,9 +508,6 @@ function main() {
                   Enter.scale.set(1,1,1)
 
                 }
-
-                
-                
 
               } //end of if right
 
