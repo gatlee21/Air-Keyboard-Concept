@@ -12,8 +12,8 @@ Link to demo video: https://youtu.be/oilVqyEGSho
 ## Setup
 This project uses node.js so make sure to install the latest version.
 ```
-git clone https://github.com/electron/electron-quick-start
-cd electron-quick-start
+git clone https://github.com/atlee19/Air-Keyboard-Concept.git
+cd Air-Keyboard-Concept
 npm install
 npm start
 ```
