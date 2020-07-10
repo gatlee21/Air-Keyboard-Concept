@@ -3,7 +3,7 @@ const InitLeap = require('./lib/InitLeap')
 const ThreeScene = require('./lib/ThreeScene')
 const TWEEN = require('@tweenjs/tween.js');
 const SpriteText = require('three-spritetext');
-
+const { remote, ipcRenderer } = require ('electron');
 const keyModel = require('./keyboard.json')
 
 function main() {
@@ -11,6 +11,11 @@ function main() {
     const three = new ThreeScene();
 
     const leap = InitLeap(three.scene, three.camera)
+
+    let textWindow = remote.getGlobal("windows").TextWindow
+    console.log("textWindow: ", textWindow)
+
+    // textWindow.webContents.send('message', "Connected")
   
 
     const loader = new THREE.ObjectLoader();
@@ -299,26 +304,32 @@ function main() {
                 if(Q.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   Q.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Q.name)
                 }
                 else if(D.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   D.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', D.name)
                 }
                 else if(O.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   O.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', O.name)
                 }
                 else if(E.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   E.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', E.name)
                 }
                 else if(H.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   H.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', H.name)
                 }
                 else if(Y.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   Y.scale.set(1.2,1.2,1.2)
                   cursor.material.color.setHex(GREEN)
+                  textWindow.webContents.send('message', Y.name)
                 }
                 else if(U.getWorldPosition().distanceTo(toVector3(indexFingerPos)) < 0.025){
                   U.scale.set(1.2,1.2,1.2)
@@ -520,27 +531,5 @@ function toVector3(array, offset_x=0,offset_y=0, offset_z=0){
   return a;
 }
 
-
-function attachToPalm(hand){
-
-}
-
-    // //create the pointer 
-    // var ConeGeometry = new THREE.ConeGeometry( 0.005, 0.015, 32 );
-    // var coneColor = new THREE.MeshPhongMaterial( {color: 0xffff00} );
-    // var eggPointer = new THREE.Mesh( ConeGeometry, coneColor );
-    // eggPointer.position.set(0,0,-0.5)
-    // eggPointer.rotation.x = -1
-    // eggPointer.rotation.y = 1
-    // three.scene.add(eggPointer)
-
- // //attach pointer between index and thumb
-            // let indexFingerPos = hand.fingers[1].dipPosition;
-            // let thumbPos = hand.fingers[0].dipPosition;
-            // let midpoint = new THREE.Vector3();
-            // midpoint.add(toVector3(thumbPos));
-            // midpoint.add(toVector3(indexFingerPos));
-            // midpoint.multiplyScalar(0.5);
-            // eggPointer.position.copy(midpoint)
 
 main();

@@ -1,5 +1,13 @@
 const { app, BrowserWindow } = require('electron')
 
+// global.ARwindow =null
+// global.TextWindow=null
+
+global.windows = {
+  ARwindow: null,
+  TextWindow: null
+}
+
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
