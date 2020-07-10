@@ -276,9 +276,7 @@ function main() {
     leap.loopController.on('frame', function leapFrame(frame){
         
         frame.hands.forEach(hand => {
-              // console.log("label_Q: ", label_Q.getWorldPosition())
-              // console.log("Q: ",Q.getWorldPosition())
-              // label_Q.position.set(0,0,0.1)
+
               //get palm position and palm vector
               let palmPos = hand.palmPosition;
               let palmNorm = hand.palmNormal;
@@ -506,6 +504,7 @@ function main() {
                   Tab.scale.set(1,1,1)
                   Del.scale.set(1,1,1)
                   Back.scale.set(1,1,1)
+                  Space.scale.set(1,1,1)
                   Enter.scale.set(1,1,1)
 
                 }
